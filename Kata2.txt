@@ -23,18 +23,19 @@ relevant men slumpmässig data genom att skapa en class Factory.
 	- Implementera IEquitable<>
 		- Kom ihåg legacy: override bool Equals(object obj) => Equals(obj as IMember);
 		- override int GetHashCode() =>
+	- Implementera en contructor som anropas RandomInit()
 
 5. Skriv några kodrader i Program.Main() som testar att skapa instanser av Member.
 	- Använda IMember som typ så länge det går.
 
 6. Deklarara ett Interface IMemberList som definierar
 	- Metod, Count, som returnerar totala antalet medlemmar
-	- Metod, Count(int year), som returnerar totala antalet medlemmar skapade under året "year"
 	- Metod, Sort
 
 7. Implementera IMemberList i en class, MemberList
-	- Förutom när du skapar en instans av Member, använd typen IMember
-	- En constructor(int NrOfMembers), som skapar en lista med NrOfMembers slumpmässigt initierade Members
+	- Lägg till en lista av Members som private fält.         
+			List<Member> _memberlist = new List<Member>();
+	- En constructor(int NrOfMembers), som initierar _memberlist med NrOfMembers slumpmässigt initierade Members
 	- Override ToString() för att skriva ut kluster om 10 medlemmar 
 
 8. Skriv några kodrader i Program.Main() som skapar en sorterad medlemslista för Hilton med 20 medlemmar
